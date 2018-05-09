@@ -12,7 +12,7 @@ class Lesson2 {
      */
     public static void main(String[] args) {
         System.out.println(formula(155));
-        System.out.println(initials("Прлар лво ffdd"));
+        System.out.println(initials("акулова еатерина алексеевна"));
     }
 
     static int formula(int x) {
@@ -38,7 +38,7 @@ class Lesson2 {
         String i = Array1[1].charAt(0) + ".";
         String o = Array1[2].charAt(0) + ".";
         String initials = f + i + o;
-        return t.toUpperCase();
+        return initials.toUpperCase();
     }
 
 }
