@@ -1,23 +1,22 @@
 package ru.reksoft;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.Assert;
 import org.junit.Test;
 
 public class Lesson2Test {
 
     @Test
     public void formula() {
-        assertEquals(5, Lesson2.formula(1), "y(1) = 5");
-        assertEquals(13, Lesson2.formula(15), "y(15) = 13");
-        assertEquals(44, Lesson2.formula(155), "y(155) = 44");
+        Assert.assertEquals(5, Lesson2.formula(1));
+        Assert.assertEquals(13, Lesson2.formula(15));
+        Assert.assertEquals(44, Lesson2.formula(155));
     }
 
     @Test
     public void initials() {
-        assertEquals("И.И.П.", Lesson2.initials("Иванов Иван Петрович"), "Иванов Иван Петрович → И.И.П.");
-        assertEquals("П.А.Н.", Lesson2.initials("Петров алексей Никифорович"), "Петров алексей Никифорович → П.А.Н.");
-        assertEquals("К.Г.В.", Lesson2.initials("Козлова Галина Васильевна"), "Козлова Галина Васильевна → К.Г.В.");
-        assertEquals("П.А.С.", Lesson2.initials("Пушкин А. С."), "Пушкин А. С. → П.А.С.");
+        Assert.assertEquals("И.И.П.", Lesson2.initials("Иванов Иван Петрович"));
+        Assert.assertEquals("П.А.Н.", Lesson2.initials("Петров алексей Никифорович"));
+        Assert.assertEquals("К.Г.В.", Lesson2.initials("Козлова Галина Васильевна"));
+        Assert.assertEquals("П.А.С.", Lesson2.initials("Пушкин А. С."));
     }
 }
