@@ -15,4 +15,8 @@ public class Trainer extends Person {
         return experience;
     }
 
+    public String toString(){
+        return lastname + " " + firstname + " " + middlename + " " + experience;
+    }
+
 }

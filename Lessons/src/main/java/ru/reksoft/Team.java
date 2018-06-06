@@ -21,10 +21,6 @@ public class Team {
         this.trainer = trainer;
     }
 
-    public void getTrainerToString(){
-        System.out.println(trainer.lastname + " " + trainer.firstname + " " + trainer.middlename + " " + trainer.getExperience());
-    }
-
     public Trainer getTrainer() {
         return trainer;
     }
@@ -33,11 +29,12 @@ public class Team {
         return teamArray;
     }
 
-    public void getTeamArrayToString(){
+    public String printTeamArrayToString(){
+        String playerString = "";
         for (Player i : teamArray
                 ) {
-            System.out.println(i.lastname + " " + i.firstname + " " + i.middlename + " "
-                    + i.typeOfPlayer + " " + i.isActive + " " + i.goalCount);
+            playerString += i.toString();
         }
+        return playerString;
     }
 }

@@ -11,6 +11,7 @@ public class Player extends Person {
         super(lastname, firstname, middlename);
         this.isActive = isActive;
         this.typeOfPlayer = typeOfPlayer;
+        int goalCount = 0;
     }
 
     public boolean IsActive() {
@@ -31,5 +32,9 @@ public class Player extends Person {
 
     public void setGoalCount(int goalCount){
         this.goalCount = goalCount;
+    }
+
+    public String toString(){
+        return lastname + " " + firstname + " " + middlename + " " + isActive + " " + typeOfPlayer  + " " + goalCount + "\n";
     }
 }

@@ -11,8 +11,8 @@ public class Lesson5 {
         team.getTeamArray().get(0).setGoalCount(5);
         team.getTeamArray().get(1).setGoalCount(2);
         team.getTrainer().setExperience(20);
-        team.getTrainerToString();
-        team.getTeamArrayToString();
+        System.out.println(team.getTrainer());
+        System.out.println(team.printTeamArrayToString());
     }
 }
 
