@@ -6,13 +6,14 @@ public class Team {
     private ArrayList<Player> teamArray = new ArrayList<Player>();
     private String teamName;
     private Trainer trainer;
+    private int PLAYERS_MAX_COUNT = 20;
 
     public Team(String teamName){
         this.teamName = teamName;
     }
 
     public void addPlayer(Player player){
-        if (teamArray.size() < 20) {
+        if (teamArray.size() < PLAYERS_MAX_COUNT) {
             teamArray.add(player);
         }
     }
