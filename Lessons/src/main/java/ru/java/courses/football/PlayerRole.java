@@ -1,14 +1,14 @@
-package ru.reksoft;
+package ru.java.courses.football;
 
-public enum TypeOfPlayer {
-    ATTACK("Нападающий"),
+public enum PlayerRole {
+    WINGER("Нападающий"),
     DEFENDER("Защитник"),
     GOALKEEPER("Вратарь"),
     MIDFIELDER("Полузащитник");
 
     String name;
 
-    TypeOfPlayer(String name) {
+    PlayerRole(String name) {
         this.name = name;
     }
 

@@ -1,4 +1,4 @@
-package ru.reksoft;
+package ru.java.courses.football;
 
 public class Lesson4 {
 // вывести самое короткое и самое длдинное название
