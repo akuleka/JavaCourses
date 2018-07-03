@@ -16,19 +16,19 @@ public class Player extends Person {
         this.playerRole = playerRole;
     }
 
-    public boolean IsActive() {
+    public boolean isActive() {
         return this.isActive;
     }
 
-    public PlayerRole getPlayerRole(){
+    public PlayerRole getRole(){
         return playerRole;
     }
 
-    public void setPlayerRole(PlayerRole playerRole) {
+    public void setRole(PlayerRole playerRole) {
         this.playerRole = playerRole;
     }
 
-    public int getGoalCount() {
+    public int getGoals() {
         return goalCount;
     }
 
@@ -36,9 +36,16 @@ public class Player extends Person {
         this.goalCount = goalCount;
     }
 
+    public int score(){
+        return goalCount += goalCount;
+    }
+
     public String toString(){
         return name + " " + isActive + " " + playerRole + " " + goalCount + "\n";
     }
 
+    public void setActive(boolean isActive){
+        this.isActive = isActive;
+    }
 
 }

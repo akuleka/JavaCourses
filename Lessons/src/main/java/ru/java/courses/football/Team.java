@@ -7,28 +7,29 @@ public class Team {
     private String name;
     private Coach coach;
     private int PLAYERS_MAX_COUNT = 20;
+    private int teamscore = 0;
 
-    public Team(String name){
+    public Team(String name) {
         this.name = name;
     }
 
-    public void addPlayers(Player ... players){
+    public void addPlayers(Player... players) {
         for (Player i : players)
             if (teamArray.size() < PLAYERS_MAX_COUNT) {
                 teamArray.add(i);
-            }
-            else try {
+            } else try {
                 throw new Exception("В команде не может быть больше 20 игроков");
             } catch (Exception e) {
                 e.printStackTrace();
             }
     }
 
-    public void removePlayers(Player ... players){
-
+    public void removePlayer(int i) {
+        teamArray.remove(teamArray.remove(i));
+        //return System.out.println("Из команды удален игрок" + teamArray.get(i));
     }
 
-    public void setCoach(Coach coach){
+    public void setCoach(Coach coach) {
         this.coach = coach;
     }
 
@@ -36,14 +37,17 @@ public class Team {
         return coach;
     }
 
-    public ArrayList<Player> getPlayers() {
+    public int getPlayersCount() {
+        return teamArray.size();
+    }
+
+    public ArrayList<Player> getPlayers(){
         return teamArray;
     }
 
-    public String printTeamArrayToString(){
+    public String printTeamArrayToString() {
         String playerString = "";
-        for (Player i : teamArray
-                ) {
+        for (Player i : teamArray) {
             playerString += i.toString();
         }
         return playerString;
@@ -56,5 +60,13 @@ public class Team {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getScore() {
+        for (Player i : teamArray) {
+            teamscore = teamscore + i.score();
+        }
+        return teamscore;
+    }
+
 
 }
