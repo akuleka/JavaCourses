@@ -1,5 +1,6 @@
 package ru.reksoft;
 
+
 public class Lesson3_Operators {
 
     /**
@@ -18,9 +19,15 @@ public class Lesson3_Operators {
      * - получить первые n символов из строки можно методом .substring(0, n)
      */
     public static String task1(int i, String str) {
-        // свой код нужно писать тут
-        // следующую строку можно удалять
-        return null;
+        if ( i != 0 ){
+            str = i > 0 ? str + i : i + str;
+        } else {
+            str = "0";
+        }
+
+
+
+
     }
 
     /**
@@ -37,6 +44,7 @@ public class Lesson3_Operators {
      * Подсказка: тут все просто, думайте сами ;)
      */
     public static boolean task2(int i) {
+
         // свой код нужно писать тут
         // следующую строку можно удалять
         return false;
