@@ -20,7 +20,7 @@ public class Coach extends Person {
     }
 
     public String toString(){
-        return name + " " + experience;
+        return fullname + " " + experience;
     }
 
 }

@@ -1,18 +1,26 @@
 package ru.java.courses.football;
 
 public class Person {
-    String name;
+    String fullname;
 
-    public Person(String name){
-        this.name = name;
+    public Person(String fullname){
+        checkEmptyName(fullname);
+        this.fullname = fullname;
 
     }
 
-    public String getName() {
-        return name;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFullname(String fullname) {
+        checkEmptyName(fullname);
+        this.fullname = fullname;
+    }
+
+    public void checkEmptyName(String fullName) {
+        if (fullName == null || fullName.isEmpty()) {
+            throw new IllegalArgumentException ("Не может быть имени null или пустого");
+        }
     }
 }

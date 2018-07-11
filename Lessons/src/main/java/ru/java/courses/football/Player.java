@@ -8,11 +8,13 @@ public class Player extends Person {
     public Player(String fullname, boolean isActive, PlayerRole playerRole) {
         super(fullname);
         this.isActive = isActive;
+        checkPlayerRole(playerRole);
         this.playerRole = playerRole;
     }
 
     public Player(String fullname, PlayerRole playerRole){
         super(fullname);
+        checkPlayerRole(playerRole);
         this.playerRole = playerRole;
     }
 
@@ -25,6 +27,7 @@ public class Player extends Person {
     }
 
     public void setRole(PlayerRole playerRole) {
+        checkPlayerRole(playerRole);
         this.playerRole = playerRole;
     }
 
@@ -37,15 +40,29 @@ public class Player extends Person {
     }
 
     public int score(){
-        return goalCount += goalCount;
+        if (isActive) {
+            return goalCount ++;
+        }else {
+            throw new IllegalStateException("Запасные игроки не могут забивать голы");
+        }
     }
 
     public String toString(){
-        return name + " " + isActive + " " + playerRole + " " + goalCount + "\n";
+        return fullname + " " + isActive + " " + playerRole + " " + goalCount + "\n";
     }
 
     public void setActive(boolean isActive){
         this.isActive = isActive;
+    }
+
+    public String getFullname() {
+        return super.getFullname();
+    }
+
+    public void checkPlayerRole(PlayerRole role) {
+        if (role == null) {
+            throw new IllegalArgumentException ("Не может быть роли null или пустой");
+        }
     }
 
 }

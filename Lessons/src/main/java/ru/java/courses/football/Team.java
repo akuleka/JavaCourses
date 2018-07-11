@@ -10,19 +10,21 @@ public class Team {
     private int teamscore = 0;
 
     public Team(String name) {
+        checkTeamName(name);
         this.name = name;
     }
 
-    public void addPlayers(Player... players) {
-        for (Player i : players)
+    public void addPlayers(Player ... player) {
+        for (Player i : player)
             if (teamArray.size() < PLAYERS_MAX_COUNT) {
                 teamArray.add(i);
-            } else try {
-                throw new Exception("В команде не может быть больше 20 игроков");
-            } catch (Exception e) {
-                e.printStackTrace();
+            } else {
+                throw new IllegalArgumentException("В команде не может быть больше 20 игроков");
             }
+
     }
+
+
 
     public void removePlayer(int i) {
         teamArray.remove(teamArray.remove(i));
@@ -58,6 +60,7 @@ public class Team {
     }
 
     public void setName(String name) {
+        checkTeamName(name);
         this.name = name;
     }
 
@@ -66,6 +69,12 @@ public class Team {
             teamscore = teamscore + i.score();
         }
         return teamscore;
+    }
+
+    public void checkTeamName(String name){
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException ("Не может быть имени null или пустого");
+        }
     }
 
 

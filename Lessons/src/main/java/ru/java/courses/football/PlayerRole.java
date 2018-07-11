@@ -3,18 +3,22 @@ package ru.java.courses.football;
 public enum PlayerRole {
     WINGER("Нападающий"),
     DEFENDER("Защитник"),
-    GOALKEEPER("Вратарь"),
-    MIDFIELDER("Полузащитник");
+    GOALKEEPER("Вратарь");
 
-    String name;
+    String roleName;
 
-    PlayerRole(String name) {
-        this.name = name;
+    PlayerRole(String roleName) {
+        this.roleName = roleName;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
 }
 
 
